@@ -15,7 +15,7 @@ class Slot:
     pickaxe = ["wood_pickaxe", "iron_pickaxe", "diamond_pickaxe", "gold_pickaxe"]
     block = ["red_wool", "blue_wool", "green_wool", "yellow_wool"]
 
-    def __init__(self, name: str, number: int):
+    def __init__(self, name: str="Air", number: int=1):
         self.name = name
         self.number = number
         self.category = "Block"  # TODO
@@ -71,20 +71,17 @@ class Inventory:
 
         name = self.myMap[x][y].name
         # Second run check for slot "64"
-        for Condition in [False, True]:
+        for Condition in [False, True]: #
             for i in range(4):
                 for j in range(9):
-                    print(self)
                     # Tacket form left-> right, up-> down
                     if self.myMap[x][y].number == 64:
-                        print("Full")
                         return
-                    elif (i, j) == (x, y):
+                    elif (3-i, j) == (x, y):
                         continue
                     elif self.myMap[3-i][j].name != name:
                         continue
                     else:
-                        print(3-i, j)
                         if self.myMap[3-i][j].number != 64 or Condition:
                             # How many more to fill 64
                             Needed = 64 - self.myMap[x][y].number
@@ -124,7 +121,7 @@ class Inventory:
     
     def __repr__(self) -> str:
         Table = ""
-        for i in range(4):
+        for i in (3,2,1,0):
             
             out = " \n\n\n\n\n\n"
             for j in range(9):
