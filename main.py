@@ -77,7 +77,7 @@ class Inventory:
 
         name = self.myMap[x][y].name
         # Second run check for slot "64"
-        for Condition in [True, False]:
+        for Condition in [False, True]:
             for i in range(4):
                 for j in range(9):
                     # Tacket form left-> right, up-> down
@@ -88,7 +88,7 @@ class Inventory:
                     elif self.myMap[3-i][j].name != name:
                         continue
                     else:
-                        if self.myMap[3-i][j].number != 64:
+                        if self.myMap[3-i][j].number != 64 or Condition:
                             # How many more to fill 64
                             Needed = 64 - self.myMap[x][y].number
                             if self.myMap[3-i][j].number >= Needed:
