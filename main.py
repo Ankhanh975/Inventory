@@ -93,7 +93,7 @@ class Inventory:
                             Needed = 64 - self.myMap[x][y].number
                             if self.myMap[3-i][j].number >= Needed:
                                 self.myMap[3-i][j].number -= Needed
-                                self.myMap[x][y].number += Needed
+                                self.myMap[x][y].number += Neededewrgt
                             else:
                                 self.myMap[3-i][j].number -= self.myMap[3-i][j].number
                                 self.myMap[x][y].number += self.myMap[3-i][j].number
