@@ -194,8 +194,7 @@ class Inventory:
         return Table+"\n"
 
     def perform(self):
-        def Click(_ButtonDown: int, duration, _ButtonUp: int):
-            , 
+        def Click():
             win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
-            resorce.Sleepp(duration)
+            getShape.Sleepp(duration)
             win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
