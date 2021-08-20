@@ -66,6 +66,10 @@ def add2D(this, other):
 
 
 class Inventory:
+    PosOfEachSlot = [[(671, 577), (746, 581), (819, 582), (891, 585), (955, 579), (1039, 581), (1084, 582), (1174, 580), (1241, 575)],   
+                    [(676, 634), (741, 639), (815, 644), (908, 636), (964, 638), (1043, 648), (1115, 648), (1174, 648), (1243, 645)],  
+                    [(665, 716), (751, 723), (813, 719), (908, 718), (959, 724), (1032, 714), (1108, 724), (1187, 736), (1232, 727)],  
+                    [(674, 813), (742, 811), (823, 806), (890, 810), (967, 818), (1029, 823), (1103, 819), (1171, 818), (1236, 815)]] 
     armor = None
 
     def __init__(self, myMap: list, armor=None):
@@ -76,7 +80,9 @@ class Inventory:
         self.history = []
 
     def Combine(self, x, y):
-        self.history.append(f"combined at {x}, {y}")
+        # self.history.append(f"combined at {x}, {y}")
+        self.history.append(["Combined", x, y])
+
         # Performs similar like double click on Slot[x][y]
         # Minecraft will check form left-> right, up-> down,
         # and only touch the most up and most left 64 if nothing else to grab
@@ -109,7 +115,8 @@ class Inventory:
                                            i][j].number -= self.myMap[3-i][j].number
 
     def Swap(self, x1, y1, x2, y2):
-        self.history.append(f"Swap {x1}, {y1} with {x2}, {y2}")
+        # self.history.append(f"Swap {x1}, {y1} with {x2}, {y2}")
+        self.history.append(["Swap", x1, y1, x2, y2])
         # Similar to LClick Slot[x1][y1] -> LClick Slot[x2][y2] -> LClick Slot[x1][y1]
         # Swap 2 slot
 
@@ -194,7 +201,19 @@ class Inventory:
         return Table+"\n"
 
     def perform(self):
-        def Click():
+        def ClickAt(x: int, y: int):
+            win32api.SetCursorPos((x,y))
             win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
-            getShape.Sleepp(duration)
+            getShape.Sleepp(0.005)
             win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
+
+        for x in range(self.history):
+            if x[0] == "Combined":
+                pass
+            elif x[0] == "Swap":
+            # Similar to LClick Slot[x1][y1] -> LClick Slot[x2][y2] -> LClick Slot[x1][y1]
+                ClickAt(self.PosOfEachSlot[x[1]][x[2]]) 
+                ClickAt(self.PosOfEachSlot[x[3]][x[4]]) 
+                ClickAt(self.PosOfEachSlot[x[1]][x[2]]) 
+            
+
