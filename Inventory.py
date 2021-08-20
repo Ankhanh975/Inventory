@@ -1,35 +1,46 @@
 import getShape
 import functools
+import win32api
+import win32con
 
-allItem = ['apple_golden', 'arrow', 'bow_standby', 'bucket_water', 
-	'compass', 'diamond', 'diamond_axe', 'diamond_pickaxe', 
-	'diamond_sword', 'emerald', 'ender_pearl', 'fireball', 
-	'gold_axe', 'gold_ingot', 'gold_pickaxe', 'iron_axe', 
-	'iron_ingot', 'iron_pickaxe', 'iron_sword', 'stone_axe', 
-	'stone_pickaxe', 'stone_sword', 'wood_sword', "wood_axe", "wood_pickaxe",
-    "red_wool", "blue_wool", "green_wool", "yellow_wool"]
+allItem = ['apple_golden', 'arrow', 'bow_standby', 'bucket_water',
+           'compass', 'diamond', 'diamond_axe', 'diamond_pickaxe',
+           'diamond_sword', 'emerald', 'ender_pearl', 'fireball',
+           'gold_axe', 'gold_ingot', 'gold_pickaxe', 'iron_axe',
+           'iron_ingot', 'iron_pickaxe', 'iron_sword', 'stone_axe',
+           'stone_pickaxe', 'stone_sword', 'wood_sword', "wood_axe", "wood_pickaxe",
+           "red_wool", "blue_wool", "green_wool", "yellow_wool"]
+
 
 @functools.total_ordering
 class Slot:
     sword = ["wood_sword", "stone_sword", "iron_sword", "diamond_sword"]
     axes = ["wood_axe", "iron_axe", "diamond_axe", "gold_axe"]
-    pickaxe = ["wood_pickaxe", "iron_pickaxe", "diamond_pickaxe", "gold_pickaxe"]
+    pickaxe = ["wood_pickaxe", "iron_pickaxe",
+               "diamond_pickaxe", "gold_pickaxe"]
     block = ["red_wool", "blue_wool", "green_wool", "yellow_wool"]
 
-    def __init__(self, name: str="Air", number: int=1, enchanted: bool=False):
+    rank = 1
+    enchanted = False
+    fullStack = 64
+
+    def __init__(self, name: str = "Air", number: int = 1, enchanted: bool = False):
         self.name = name
         self.number = number
         self.category = name  # TODO
-        self.id = int(0)  # Remove id system since Minecraft 1.10.2(?)
+        # self.id = int(0)  # Remove id system since Minecraft 1.10.2(?)
         self.enchanted = enchanted
-        self.rank = 1
+
         # 1 for item don't have category, higher if it has higher value'
         # +0.5 if it's enchanted
-        if self.category in ["Sword", "axes", "pickaxe"]:
+        if self.category in ["sword", "axes", "pickaxe"]:
             self.rank = eval(f"{self.category}.index(self.category)")
 
         elif self.category == "":
             pass
+
+        if self.category in ["sword", "axes", "pickaxe"]:
+            self.fullStack = 1
 
     def __lt__(self, other):
         # True if self > other, False if self <= other
@@ -43,6 +54,7 @@ class Slot:
     def __eq__(self, other):
         return True
 
+
 def add2D(this, other):
     out = this.split('\n')
     Z = other.split('\n')
@@ -51,6 +63,7 @@ def add2D(this, other):
         out[x] += Z[x] + "\n"
 
     return ''.join(out)
+
 
 class Inventory:
     armor = None
@@ -73,7 +86,7 @@ class Inventory:
 
         name = self.myMap[x][y].name
         # Second run check for slot "64"
-        for Condition in [False, True]: #
+        for Condition in [False, True]:
             for i in range(4):
                 for j in range(9):
                     # Tacket form left-> right, up-> down
@@ -92,7 +105,8 @@ class Inventory:
                                 self.myMap[3-i][j].number -= Needed
                             else:
                                 self.myMap[x][y].number += self.myMap[3-i][j].number
-                                self.myMap[3-i][j].number -= self.myMap[3-i][j].number
+                                self.myMap[3 -
+                                           i][j].number -= self.myMap[3-i][j].number
 
     def Swap(self, x1, y1, x2, y2):
         self.history.append(f"Swap {x1}, {y1} with {x2}, {y2}")
@@ -118,25 +132,36 @@ class Inventory:
                 if self.myMap[x][y].name == name:
                     count += self.myMap[x][y].number
         return count
-    
-    def CountByStack(self, name, mode=['Name', "Category"]):
-        mode = mode.lower()
+
+    def CountByStack(self, name, mode=['Name', "Category"][0]):
         # How many slots a item/Category take, how many is minimum needed
+        def toStack(num: int, fullStack=64):
+            if num < 0:
+                raise ValueError("Don't support negative numbers")
+            # print (f"num: {(num)}, fullStack: {fullStack} and filled in: {(num-1)//fullStack+1} stack")
+            return (num-1)//fullStack+1
+
+        mode = mode.lower()
         count = 0
-        for x in range(9):
-            for y in range(4):
-                eval(f"self.myMap[x][y].{mode} == name:")
-                if self.myMap[x][y].name == name:
-                    count += self.myMap[x][y].number
+        if mode == "name":
+            for x in range(9):
+                for y in range(4):
+                    if self.myMap[x][y].name == name:
+                        count += self.myMap[x][y].number
+
+            count = toStack(count, self.myMap[x][y].fullStack)
+        elif mode == "category":
+            for x in eval(f"Slot.{name}"):
+                count += self.CountByStack(x, "Name")
         return count
 
     def __str__(self) -> str:
         return self.__repr__()
-    
+
     def __repr__(self) -> str:
         Table = ""
-        for i in (3,2,1,0):
-            
+        for i in (3, 2, 1, 0):
+
             out = " \n\n\n\n\n\n"
             for j in range(9):
                 name = self.myMap[i][j].name
@@ -144,16 +169,16 @@ class Inventory:
 
                 if len(name) >= 7 and len(name) <= 18:
                     fName = "{:^9}".format(name[0:len(name)//2])
-                    sName = "{:^9}".format(name[len(name)//2: ])
+                    sName = "{:^9}".format(name[len(name)//2:])
                 elif len(name) < 7:
                     fName = "{:^9}".format(name)
                     sName = "{:^9}".format("")
                 else:
                     name = name[0:18]
                     fName = "{:^9}".format(name[0:len(name)//2])
-                    sName = "{:^9}".format(name[len(name)//2: ])
+                    sName = "{:^9}".format(name[len(name)//2:])
 
-                thisCell=f'''\
+                thisCell = f'''\
  ___________ 
 |           |
 | {fName  } |
@@ -163,10 +188,14 @@ class Inventory:
                 out = add2D(out, thisCell)
 
             Table += out
-                # print("out:",out)
-                # print("thisCell:",thisCell)
+            # print("out:",out)
+            # print("thisCell:",thisCell)
 
         return Table+"\n"
 
     def perform(self):
-        pass
+        def Click(_ButtonDown: int, duration, _ButtonUp: int):
+            , 
+            win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
+            resorce.Sleepp(duration)
+            win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)

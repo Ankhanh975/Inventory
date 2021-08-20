@@ -18,7 +18,7 @@ Prefer = {
     7: "Possion",
 }
 def readMap(jpg):
-    
+    pass
 
 if __name__ == '__main__':
     inputMap=[[0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -38,3 +38,4 @@ if __name__ == '__main__':
     print ("Before\n", inventory)
     inventory.Combine(0,1)
     print ("After\n", inventory)
+    print(eval(f"Inventory.Slot.sword"))

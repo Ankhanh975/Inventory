@@ -1,5 +1,13 @@
 from collections.abc import Sequence
 
+import time
+def Sleepp(duration): #High accurate sleep
+    now = time.perf_counter()
+    end = now + duration
+    while now < end:
+        if end-now >= 1/61:
+            time.sleep(1/1000)
+        now = time.perf_counter()
 
 def getShape(lst, shape=()):
     """
