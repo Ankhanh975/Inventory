@@ -6,7 +6,8 @@ allItem = ['apple_golden', 'arrow', 'bow_standby', 'bucket_water',
 	'diamond_sword', 'emerald', 'ender_pearl', 'fireball', 
 	'gold_axe', 'gold_ingot', 'gold_pickaxe', 'iron_axe', 
 	'iron_ingot', 'iron_pickaxe', 'iron_sword', 'stone_axe', 
-	'stone_pickaxe', 'stone_sword', 'wood_sword', "wood_axe", "wood_pickaxe"]
+	'stone_pickaxe', 'stone_sword', 'wood_sword', "wood_axe", "wood_pickaxe",
+    "red_wool", "blue_wool", "green_wool", "yellow_wool"]
 
 @functools.total_ordering
 class Slot:
@@ -15,17 +16,17 @@ class Slot:
     pickaxe = ["wood_pickaxe", "iron_pickaxe", "diamond_pickaxe", "gold_pickaxe"]
     block = ["red_wool", "blue_wool", "green_wool", "yellow_wool"]
 
-    def __init__(self, name: str="Air", number: int=1):
+    def __init__(self, name: str="Air", number: int=1, enchanted: bool=False):
         self.name = name
         self.number = number
-        self.category = "Block"  # TODO
+        self.category = name  # TODO
         self.id = int(0)  # Remove id system since Minecraft 1.10.2(?)
-        self.enchanted = False
+        self.enchanted = enchanted
         self.rank = 1
         # 1 for item don't have category, higher if it has higher value'
         # +0.5 if it's enchanted
         if self.category in ["Sword", "axes", "pickaxe"]:
-            self.rank = eval(f"{self.category}.index(self.name)")
+            self.rank = eval(f"{self.category}.index(self.category)")
 
         elif self.category == "":
             pass
@@ -55,13 +56,14 @@ class Inventory:
     armor = None
 
     def __init__(self, myMap: list, armor=None):
-        print(getShape.getShape(myMap))
         if getShape.getShape(myMap) != (4, 9):
             raise ValueError("Not a Minecraft Inventory setup.")
         self.myMap = myMap
         self.armor = armor
+        self.history = []
 
     def Combine(self, x, y):
+        self.history.append(f"combined at {x}, {y}")
         # Performs similar like double click on Slot[x][y]
         # Minecraft will check form left-> right, up-> down,
         # and only touch the most up and most left 64 if nothing else to grab
@@ -93,6 +95,7 @@ class Inventory:
                                 self.myMap[3-i][j].number -= self.myMap[3-i][j].number
 
     def Swap(self, x1, y1, x2, y2):
+        self.history.append(f"Swap {x1}, {y1} with {x2}, {y2}")
         # Similar to LClick Slot[x1][y1] -> LClick Slot[x2][y2] -> LClick Slot[x1][y1]
         # Swap 2 slot
 
@@ -112,6 +115,17 @@ class Inventory:
         count = 0
         for x in range(9):
             for y in range(4):
+                if self.myMap[x][y].name == name:
+                    count += self.myMap[x][y].number
+        return count
+    
+    def CountByStack(self, name, mode=['Name', "Category"]):
+        mode = mode.lower()
+        # How many slots a item/Category take, how many is minimum needed
+        count = 0
+        for x in range(9):
+            for y in range(4):
+                eval(f"self.myMap[x][y].{mode} == name:")
                 if self.myMap[x][y].name == name:
                     count += self.myMap[x][y].number
         return count
@@ -153,3 +167,6 @@ class Inventory:
                 # print("thisCell:",thisCell)
 
         return Table+"\n"
+
+    def perform(self):
+        pass
