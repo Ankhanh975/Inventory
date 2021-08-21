@@ -1,3 +1,12 @@
+def add2D(this, other):
+    out = this.split('\n')
+    Z = other.split('\n')
+
+    for x in range(min(len(out), len(Z))):
+        out[x] += Z[x] + "\n"
+
+    return ''.join(out)
+    
 def Combine(self, x, y):
     # self.history.append(f"combined at {x}, {y}")
     self.history.append(["Combined", x, y])

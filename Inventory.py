@@ -13,14 +13,7 @@ allItem = ['apple_golden', 'arrow', 'bow_standby', 'bucket_water',
            'stone_pickaxe', 'stone_sword', 'wood_sword', "wood_axe", "wood_pickaxe",
            "red_wool", "blue_wool", "green_wool", "yellow_wool"]
 
-def add2D(this, other):
-    out = this.split('\n')
-    Z = other.split('\n')
 
-    for x in range(min(len(out), len(Z))):
-        out[x] += Z[x] + "\n"
-
-    return ''.join(out)
 
 
 class Inventory:

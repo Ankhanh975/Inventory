@@ -18,7 +18,7 @@ def Sleepp(duration): #High accurate sleep
             time.sleep(1/1000)
         now = time.perf_counter()
         
-import _List
+import lib._List
 import time
 def press(args, duration: float=1/500):
     win32api.keybd_event(_List.VK_CODE[args], 0,0,0)
