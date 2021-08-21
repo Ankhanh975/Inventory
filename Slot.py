@@ -6,8 +6,12 @@ class Slot:
     pickaxe = ["wood_pickaxe", "iron_pickaxe",
                "diamond_pickaxe", "gold_pickaxe"]
     block = ["red_wool", "blue_wool", "green_wool", "yellow_wool"]
+    resource = ["iron_ingot", "gold_ingot", "diamond", "emerald"]
+    possion = ["Spped", "Jump", "Invisible"]
 
-    rank = 1
+
+
+    rank = 1 # Design for compare slot have same category
     enchanted = False
     fullStack = 64
 
@@ -20,6 +24,7 @@ class Slot:
 
         # 1 for item don't have category, higher if it has higher value'
         # +0.5 if it's enchanted
+        # For sword this number is damage
         if self.category in ["sword", "axes", "pickaxe"]:
             self.rank = eval(f"{self.category}.index(self.category)")
 
