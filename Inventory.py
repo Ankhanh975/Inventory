@@ -11,8 +11,7 @@ allItem = ['apple_golden', 'arrow', 'bow_standby', 'bucket_water',
            'gold_axe', 'gold_ingot', 'gold_pickaxe', 'iron_axe',
            'iron_ingot', 'iron_pickaxe', 'iron_sword', 'stone_axe',
            'stone_pickaxe', 'stone_sword', 'wood_sword', "wood_axe", "wood_pickaxe",
-           "red_wool", "blue_wool", "green_wool", "yellow_wool"]
-
+           "red_wool", "blue_wool", "green_wool", "yellow_wool", "shears"]
 
 
 
@@ -92,7 +91,7 @@ class Inventory:
                 if eval(f"self.myMap[x][y].{mode}") == name:
                     Z.append((x, y))
         return Z
-
+    Gather = AI.Gather
     AISetUp = AI.AISetUp
     def perform(self):
         # After all calculation perform that to Minecraft base on calculation history

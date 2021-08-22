@@ -3,15 +3,14 @@ import functools
 class Slot:
     sword = ["wood_sword", "stone_sword", "iron_sword", "diamond_sword"]
     axes = ["wood_axe", "iron_axe", "diamond_axe", "gold_axe"]
-    pickaxe = ["wood_pickaxe", "iron_pickaxe",
-               "diamond_pickaxe", "gold_pickaxe"]
+    pickaxe = ["wood_pickaxe", "iron_pickaxe", "diamond_pickaxe", "gold_pickaxe"]
     block = ["red_wool", "blue_wool", "green_wool", "yellow_wool"]
     resource = ["iron_ingot", "gold_ingot", "diamond", "emerald"]
     possion = ["Spped", "Jump", "Invisible"]
+    tools = ["shears"],
+    tools += sword + axes + pickaxe 
 
-
-
-    rank = 1 # Design for compare slot have same category
+    rank = 1 # Design for compare slot of same category
     enchanted = False
     fullStack = 64
 
