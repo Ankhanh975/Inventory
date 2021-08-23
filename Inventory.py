@@ -35,6 +35,7 @@ class Inventory:
         self.myMap = myMap
         self.armor = armor
         self.history = []
+        self.BuyHistory = []
 
     def CountByCategory(self, Category):
         count = 0
@@ -102,8 +103,8 @@ class Inventory:
             getShape.Sleepp(0.005)
             win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
 
-        lib.resorce.pressAndHold(key)
-        lib.resorce.release(key)
+        lib.resource.pressAndHold(key)
+        lib.resource.release(key)
 
         for x in range(self.history):
             if x[0] == "Combined":
