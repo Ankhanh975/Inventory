@@ -1,12 +1,6 @@
-[[0000 , block, 0000, 0000, 0000, 0000, 0000, poss, 0000], 
- [arrow, block, 0000, 0000, 0000, 0000, 0000, poss, 0000], 
- [arrow, block, 0000, 0000, 0000, 0000, 0000, poss, 0000], 
- [x    , x    , x   , x   , x   , 0000, 0000, poss, 0000]] 
- 
-Sword
-Block
-Bow
-Apple
-Fire Ball
-Iron Golem
-Possion
+Z = [(100, 100) for i in range(8)]
+Z = [Z for i in range(8)]
+
+# pos is [0<=x<=1][0<=y<=6]
+
+{"name": "", "prize": "10 iron", "category": "", "pos": (0,0)}

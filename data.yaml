@@ -1,0 +1,109 @@
+# "supposePos" tell where item to go, highest rank will be there, lower rank will be in 2nd slot (if have)
+# "supposePos": "Condition" mean will be determined later in code
+{
+     "item": [
+          {"name": "apple_golden",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": "Condition", "throwAble": True
+          },
+          {"name": "arrow",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "bow_standby",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "bucket_water",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "compass",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "diamond",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "diamond_axe",
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "diamond_pickaxe",
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "diamond_None",
+               "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "emerald",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "ender_pearl",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "fireball",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "gold_axe",
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "gold_ingot",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "gold_pickaxe",
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "iron_axe",
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "iron_ingot",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "iron_pickaxe",
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "iron_None",
+               "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "stone_axe",
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "stone_pickaxe",
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "stone_None",
+               "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "wood_None",
+               "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+          },
+          {"name": "wood_axe",
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "wood_pickaxe",
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+          },
+          {"name": "red_wool",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 1], "throwAble": True
+          },
+          {"name": "blue_wool",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 1], "throwAble": True
+          },
+          {"name": "green_wool",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 1], "throwAble": True
+          },
+          {"name": "yellow_wool",
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 1], "throwAble": True
+          },
+          {"name": "shears",
+               "fullStack": 1, "category": "None", "rank": 1, "supposePos": [0, 0]
+          }
+     ],
+     # Where each mySlot[0<=x<=8][0<=y<=3] is to click
+     "PosOfEachSlot": [[(671, 577), (746, 581), (819, 582), (891, 585), (955, 579), 
+                        (1039, 581), (1084, 582), (1174, 580), (1241, 575)],
+                       [(676, 634), (741, 639), (815, 644), (908, 636), (964, 638),
+                        (1043, 648), (1115, 648), (1174, 648), (1243, 645)],
+                       [(665, 716), (751, 723), (813, 719), (908, 718), (959, 724),
+                        (1032, 714), (1108, 724), (1187, 736), (1232, 727)],
+                       [(674, 813), (742, 811), (823, 806), (890, 810), (967, 818), 
+                        (1029, 823), (1103, 819), (1171, 818), (1236, 815)]
+                    ],
+
+     "PosOfEachEnderChestSlot": [],
+     "Trade": [],
+}

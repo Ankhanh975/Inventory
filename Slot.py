@@ -3,11 +3,11 @@ import functools
 class Slot:
     sword = ["wood_sword", "stone_sword", "iron_sword", "diamond_sword"]
     axes = ["wood_axe", "iron_axe", "diamond_axe", "gold_axe"]
-    pickaxe = ["wood_pickaxe", "iron_pickaxe", "diamond_pickaxe", "gold_pickaxe"]
+    pickaxe = ["wood_pickaxe", "iron_pickaxe", "gold_pickaxe", "diamond_pickaxe"]
     block = ["red_wool", "blue_wool", "green_wool", "yellow_wool"]
     resource = ["iron_ingot", "gold_ingot", "diamond", "emerald"]
     possion = ["Spped", "Jump", "Invisible"]
-    tools = ["shears"],
+    tools = ["shears"]
     tools += sword + axes + pickaxe 
 
     rank = 1 # Design for compare slot of same category
@@ -17,22 +17,43 @@ class Slot:
     def __init__(self, name: str = "Air", number: int = 1, enchanted: bool = False):
         self.name = name
         self.number = number
-        self.category = name  # TODO
+        
         # self.id = int(0)  # Remove id system since Minecraft 1.10.2(?)
         self.enchanted = enchanted
+        self.SetRank()
+        self.SetCategory()
 
+
+        if self.category in ["sword", "axes", "pickaxe"]:
+            self.fullStack = 1
+    def SetCategory(self):
+        self.category = name  # TODO
+        for x in (
+            "sword", 
+            "axes", 
+            "pickaxe", 
+            "block", 
+            "resource", 
+            "possion",):
+            if self.name in eval(f"self.{x}"):
+                self.category = x
+                return
+        self.category = "None"
+
+    def SetRank(self):
         # 1 for item don't have category, higher if it has higher value'
         # +0.5 if it's enchanted
         # For sword this number is damage
+
+
         if self.category in ["sword", "axes", "pickaxe"]:
             self.rank = eval(f"{self.category}.index(self.category)")
 
         elif self.category == "":
             pass
 
-        if self.category in ["sword", "axes", "pickaxe"]:
-            self.fullStack = 1
-
+        if self.enchanted:
+            self.rank += 0.5
     def __lt__(self, other):
         # True if self > other, False if self <= other
         if self.category == other.category:
