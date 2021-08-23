@@ -42,5 +42,7 @@ class Slot:
             elif self.category in ["Sword", "axes", "pickaxe"]:
                 return True if self.rank > other.rank else False
 
+    def Load(self):
+        
     def __eq__(self, other):
         return True
