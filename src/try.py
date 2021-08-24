@@ -1,4 +1,14 @@
-from ...Inventory.lib.LoadData import LoadYaml
+# from ...Inventory.lib.LoadData import LoadYaml
 
-data = LoadYaml("C:/Users/Dell/Desktop/C++/Inventory/data.yaml")["data"]
-print(data)
+# data = LoadYaml("C:/Users/Dell/Desktop/C++/Inventory/data.yaml")["data"]
+# print(data)
+
+from dataclasses import dataclass, field
+
+@dataclass()
+class Person:
+    x: int
+    y: int=5
+    
+a = Person(1,2z)
+print(a, a.x, a.y)
