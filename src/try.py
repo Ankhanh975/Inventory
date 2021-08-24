@@ -12,4 +12,4 @@ class Person:
     
 a = Person(1,2)
 print(a, a.x, a.y)
-d
+dd
