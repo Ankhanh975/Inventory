@@ -10,5 +10,5 @@ class Person:
     x: int
     y: int=5
     
-a = Person(1,2z)
+a = Person(1,2)
 print(a, a.x, a.y)
