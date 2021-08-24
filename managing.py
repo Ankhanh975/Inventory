@@ -41,6 +41,7 @@ def Combine(self, x, y):
                             self.myMap[x][y].number += self.myMap[3-i][j].number
                             self.myMap[3 -
                                         i][j].number -= self.myMap[3-i][j].number
+                                        
 def Swap(self, x1, y1, x2, y2):
     # self.history.append(f"Swap {x1}, {y1} with {x2}, {y2}")
     self.history.append(["Swap", x1, y1, x2, y2])
@@ -88,3 +89,10 @@ ___________
         # print("thisCell:",thisCell)
 
     return Table+"\n"
+
+def ToEnderChest(self, x, y):
+    pass
+
+def Buy(self, item):
+    # Trade the item with NPC
+    pass

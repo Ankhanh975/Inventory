@@ -39,6 +39,5 @@ def lower_dict(data):
 
 
 if __name__ == '__main__':
-    data = LoadFile()
+    data = LoadYaml()
     lower_dict(data)
-    print(KeyboardInUse(data, False))

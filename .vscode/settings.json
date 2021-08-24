@@ -1,5 +1,11 @@
 {
     "cSpell.words": [
-        "numpy's"
+        "KEYEVENTF",
+        "KEYUP",
+        "ctypes",
+        "islower",
+        "keybd",
+        "numpy's",
+        "typer"
     ]
 }

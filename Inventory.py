@@ -21,12 +21,6 @@ class Inventory:
     __str__ = __repr__
     __repr__ = __repr__
 
-    PosOfEachSlot = [[(671, 577), (746, 581), (819, 582), (891, 585), (955, 579), (1039, 581), (1084, 582), (1174, 580), (1241, 575)],
-                     [(676, 634), (741, 639), (815, 644), (908, 636), (964, 638),
-                      (1043, 648), (1115, 648), (1174, 648), (1243, 645)],
-                     [(665, 716), (751, 723), (813, 719), (908, 718), (959, 724),
-                      (1032, 714), (1108, 724), (1187, 736), (1232, 727)],
-                     [(674, 813), (742, 811), (823, 806), (890, 810), (967, 818), (1029, 823), (1103, 819), (1171, 818), (1236, 815)]]
     armor = None
 
     def __init__(self, myMap: list, armor=None):
@@ -92,8 +86,10 @@ class Inventory:
                 if eval(f"self.myMap[x][y].{mode}") == name:
                     Z.append((x, y))
         return Z
+        
     Gather = AI.Gather
     AISetUp = AI.AISetUp
+    
     def perform(self):
         # After all calculation perform that to Minecraft base on calculation history
         def ClickAt(x: int, y: int):
@@ -103,8 +99,8 @@ class Inventory:
             getShape.Sleepp(0.005)
             win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
 
-        lib.resource.pressAndHold(key)
-        lib.resource.release(key)
+        lib.resource.pressAndHold()
+        lib.resource.release()
 
         for x in range(self.history):
             if x[0] == "Combined":
@@ -113,7 +109,7 @@ class Inventory:
             # Optimize movement if swap with a slot have x=0
             elif x[0] == "Swap":
                 if x[1] == 0:
-                    Press("Ctrl")
+                    lib.resource.pressAndHold("Ctrl")
 
                 ClickAt(x[1], x[2])
                 ClickAt(x[3], x[4])
