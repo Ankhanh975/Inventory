@@ -4,65 +4,75 @@
 {
      "item": [
           {"name": "diamond_sword",
-               "fullStack":  1, "category": "Sword", "rank": 4, "supposePos": ([0, 0]), "throwAble": True, "prize": "n gold", "ConditionToBuy": []
+               "fullStack":  1, "category": "Sword", "rank": 4, "supposePos": ([0, 0]), "throwAble": True, "prize": "4 emerald", "ConditionToBuy": []
           },
           {"name": "diamond_axe",
-               "fullStack":  1, "category": "Axes", "rank": 4, "supposePos": "None", "throwAble": False, "prize": "n gold", "ConditionToBuy": ["have gold_axe"]
+               "fullStack":  1, "category": "Axes", "rank": 4, "supposePos": "None", "throwAble": False, "prize": "6 gold", "ConditionToBuy": ["have gold_axe"]
           },
           {"name": "diamond_pickaxe",
-               "fullStack":  1, "category": "Pickaxe", "rank": 4, "supposePos": "None", "throwAble": False, "prize": "n gold", "ConditionToBuy": ["have gold_pickaxe"]
+               "fullStack":  1, "category": "Pickaxe", "rank": 4, "supposePos": "None", "throwAble": False, "prize": "6 gold", "ConditionToBuy": ["have gold_pickaxe"]
           },
           {"name": "gold_axe",
-               "fullStack":  1, "category": "Axes", "rank": 3, "supposePos": "None", "throwAble": False, "prize": "n gold", "ConditionToBuy": ["have iron_axe"]
+               "fullStack":  1, "category": "Axes", "rank": 3, "supposePos": "None", "throwAble": False, "prize": "3 gold", "ConditionToBuy": ["have iron_axe"]
           },
+hardened clay: 16 block 12 iron
+/TOOGGLESNEAK 
+/perspectivemod HOLD
+/cbhub
+/sidebarmod
+/day /sunset /night /fasttime 3 /resettime
+glass clay: 4 12 iron
+end stone: 12 24 iron
+Ladder: 16 4
+Wood: 4 4 gold
+Obsidian: 16 4 emerald
+Golem: 1 120 iron
 
           {"name": "gold_pickaxe",
-               "fullStack":  1, "category": "Pickaxe", "rank": 3, "supposePos": "None", "throwAble": False, "prize": "n gold", "ConditionToBuy": ["have iron_pickaxe"]
+               "fullStack":  1, "category": "Pickaxe", "rank": 3, "supposePos": "None", "throwAble": False, "prize": "3 gold", "ConditionToBuy": ["have iron_pickaxe"]
           },
           {"name": "iron_axe",
-               "fullStack":  1, "category": "Axes", "rank": 2, "supposePos": "None", "throwAble": False, "prize": "n gold", "ConditionToBuy": ["have wood_axe"]
+               "fullStack":  1, "category": "Axes", "rank": 2, "supposePos": "None", "throwAble": False, "prize": "10 iron", "ConditionToBuy": ["have wood_axe"]
           },
          
-          {"name": "gold_ingot",
-               "fullStack": 64, "category": "resource", "rank": 2, "supposePos": ([0, 0]), "throwAble": True, "prize": "n gold", "ConditionToBuy": []
-          },
+
           {"name": "iron_pickaxe",
-               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": False, "prize": "n gold", "ConditionToBuy": []
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": False, "prize": "10 iron", "ConditionToBuy": []
           },
           {"name": "iron_sword",
-               "fullStack":  1, "category": "Sword", "rank": 3, "supposePos": ([0, 0]), "throwAble": True, "prize": "n gold", "ConditionToBuy": []
+               "fullStack":  1, "category": "Sword", "rank": 3, "supposePos": ([0, 0]), "throwAble": True, "prize": "7 gold", "ConditionToBuy": []
           },
           {"name": "stone_sword",
-               "fullStack":  1, "category": "Sword", "rank": 2, "supposePos": ([0, 0]), "throwAble": True, "prize": "n gold", "ConditionToBuy": []
+               "fullStack":  1, "category": "Sword", "rank": 2, "supposePos": ([0, 0]), "throwAble": True, "prize": "10 iron", "ConditionToBuy": []
           },
           {"name": "wood_sword",
-               "fullStack":  1, "category": "Sword", "rank": 1, "supposePos": ([0, 0]), "throwAble": False, "prize": "n gold", "ConditionToBuy": []
+               "fullStack":  1, "category": "Sword", "rank": 1, "supposePos": ([0, 0]), "throwAble": False, "prize": "Na", "ConditionToBuy": []
           },
           {"name": "wood_axe",
-               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": False, "prize": "n gold", "ConditionToBuy": []
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": False, "prize": "10 iron", "ConditionToBuy": []
           },
           {"name": "wood_pickaxe",
-               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": False, "prize": "n gold", "ConditionToBuy": []
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": False, "prize": "10 iron", "ConditionToBuy": ["NotHave iron_pickaxe", "NotHave gold_pickaxe", "NotHave diamond_pickaxe"]
           },
           {"name": "shears",
-               "fullStack": 1, "category": "Axes", "rank": 1, "supposePos": ([0, 0]), "throwAble": False, "prize": "n gold", "ConditionToBuy": []
+               "fullStack": 1, "category": "Axes", "rank": 1, "supposePos": ([0, 0]), "throwAble": False, "prize": "20 iron", "ConditionToBuy": []
           }
           {"name": "apple_golden",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": "Condition", "throwAble": True, "prize": "n gold", "ConditionToBuy": []
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": "Condition", "throwAble": True, "prize": "3 gold", "ConditionToBuy": []
           },
           
           # ####
           {"name": "arrow",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([1, 0], [2, 0]), "throwAble": True, "prize": "2 gold", "ConditionToBuy": ["InCombo 8"]
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([1, 0], [2, 0]), "throwAble": True, "prize": "0.25 gold", "ConditionToBuy": ["InCombo 8"]
           },
-          {"name": "bow_standby",
+          {"name": "bow_standby", # Users should determined 
                "fullStack": 64, "category": "Sword", "rank": 0, "supposePos": ([0, 2]), "throwAble": True, "prize": "Na", "ConditionToBuy": []
           },
           {"name": "bucket_water",
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": "None", "throwAble": True, "prize": "6 gold", "ConditionToBuy": []
           },
           {"name": "compass",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": None, "throwAble": False, "prize": "10 iron_ingot", "ConditionToBuy": []
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": None, "throwAble": False, "prize": "10 iron", "ConditionToBuy": []
           },
           {"name": "diamond",
                "fullStack": 64, "category": "None", "rank": 3, "supposePos": None, "throwAble": True, "prize": "Na", "ConditionToBuy": []
@@ -70,28 +80,31 @@
           {"name": "emerald",
                "fullStack": 64, "category": "None", "rank": 4, "supposePos": None, "throwAble": True, "prize": "Na", "ConditionToBuy": []
           },
-          {"name": "iron_ingot",
+          {"name": "iron",
                "fullStack": 64, "category": "resource", "rank": 1, "supposePos": ([0, 0]), "throwAble": True, "prize": "Na", "ConditionToBuy": []
           }, 
+          {"name": "gold_ingot",
+               "fullStack": 64, "category": "resource", "rank": 2, "supposePos": ([0, 0]), "throwAble": True, "prize": "Na", "ConditionToBuy": []
+          },
           {"name": "ender_pearl",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 0]), "throwAble": True, "prize": "4 emerald", "ConditionToBuy": []
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 6]), "throwAble": True, "prize": "4 emerald", "ConditionToBuy": []
           },
           {"name": "fireball",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 0]), "throwAble": True, "prize": "40 iron_ingot", "ConditionToBuy": []
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 4]), "throwAble": True, "prize": "40 iron", "ConditionToBuy": []
           },
           
           # Rank based on number 
           {"name": "red_wool",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 1], [1, 1], [2, 1], [3, 1]), "throwAble": True, "prize": 0.25 iron_ingot", "ConditionToBuy": ["InCombo 16"]
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 1], [1, 1], [2, 1], [3, 1]), "throwAble": True, "prize": 0.25 iron", "ConditionToBuy": ["InCombo 16"]
           },
           {"name": "blue_wool",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 1], [1, 1], [2, 1], [3, 1]), "throwAble": True, "prize": 0.25 iron_ingot", "ConditionToBuy": ["InCombo 16"]
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 1], [1, 1], [2, 1], [3, 1]), "throwAble": True, "prize": 0.25 iron", "ConditionToBuy": ["InCombo 16"]
           },
           {"name": "green_wool",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 1], [1, 1], [2, 1], [3, 1]), "throwAble": True, "prize": 0.25 iron_ingot", "ConditionToBuy": ["InCombo 16"]
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 1], [1, 1], [2, 1], [3, 1]), "throwAble": True, "prize": 0.25 iron", "ConditionToBuy": ["InCombo 16"]
           },
           {"name": "yellow_wool",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 1], [1, 1], [2, 1], [3, 1]), "throwAble": True, "prize": 0.25 iron_ingot", "ConditionToBuy": ["InCombo 16"]
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": ([0, 1], [1, 1], [2, 1], [3, 1]), "throwAble": True, "prize": 0.25 iron", "ConditionToBuy": ["InCombo 16"]
           },
 
      ],
