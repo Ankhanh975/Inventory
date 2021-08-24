@@ -15,16 +15,16 @@
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": "None", "throwAble": True
           },
           {"name": "compass",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": False
           },
           {"name": "diamond",
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
           },
           {"name": "diamond_axe",
-               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "diamond_pickaxe",
-               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "diamond_None",
                "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
@@ -39,43 +39,43 @@
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
           },
           {"name": "gold_axe",
-               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "gold_ingot",
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
           },
           {"name": "gold_pickaxe",
-               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "iron_axe",
-               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "iron_ingot",
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
           },
           {"name": "iron_pickaxe",
-               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "iron_None",
                "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
           },
           {"name": "stone_axe",
-               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "stone_pickaxe",
-               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "stone_None",
-               "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+               "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": False
           },
           {"name": "wood_None",
-               "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+               "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": False
           },
           {"name": "wood_axe",
-               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "wood_pickaxe",
-               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": True
+               "fullStack":  1, "category": "Pickaxe", "rank": 1, "supposePos": "None", "throwAble": False
           },
           {"name": "red_wool",
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 1], "throwAble": True
@@ -90,7 +90,7 @@
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 1], "throwAble": True
           },
           {"name": "shears",
-               "fullStack": 1, "category": "None", "rank": 1, "supposePos": [0, 0]
+               "fullStack": 1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": False
           }
      ],
      # Where each mySlot[0<=x<=8][0<=y<=3] is to click
@@ -104,6 +104,10 @@
                         (1029, 823), (1103, 819), (1171, 818), (1236, 815)]
                     ],
 
-     "PosOfEachEnderChestSlot": [],
-     "Trade": [],
+     "PosOfEachEnderChestSlot": [[(672, 315), (734, 315),  (823, 316),  (896, 316),  (953, 316),  (1027, 315),  (1108, 318),  (1176, 316),  (1241, 313)],
+                               [(657, 381), (746, 381), (798, 386), (887, 384), (956, 391), (1033, 396), (1097, 387), (1161, 384), (1239, 383)],
+                               [(662, 445), (741, 444), (796, 443), (885, 441), (955, 442), (1037, 439), (1092, 446), (1160, 447), (1239, 453)]],
+                               
+     "Trade": [[(740, 333), (814, 341), (891, 340), (953, 340), (1036, 342), (1097, 350), (1153, 350)], 
+              [(736, 414), (811, 414), (873, 416), (939, 413), (1033, 417), (1087, 422), (1163, 426)]]],
 }
