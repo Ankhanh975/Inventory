@@ -1,6 +1,10 @@
-Z = [(100, 100) for i in range(8)]
-Z = [Z for i in range(8)]
+i = 32
+s = "{:^9}".format()
+s = ["sa": 42]
 
-# pos is [0<=x<=1][0<=y<=6]
-
-{"name": "", "prize": "10 iron", "category": "", "pos": (0,0)}
+def __init__(
+    help
+    d
+    help, y
+    t=d,c
+)

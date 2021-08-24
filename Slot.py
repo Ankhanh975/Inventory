@@ -6,9 +6,10 @@ class Slot:
     pickaxe = ["wood_pickaxe", "iron_pickaxe", "gold_pickaxe", "diamond_pickaxe"]
     block = ["red_wool", "blue_wool", "green_wool", "yellow_wool"]
     resource = ["iron_ingot", "gold_ingot", "diamond", "emerald"]
-    possion = ["Spped", "Jump", "Invisible"]
+    possion = ["Speed", "Jump", "Invisible"]
     tools = ["shears"]
     tools += sword + axes + pickaxe 
+    hello = [Sl]
 
     rank = 1 # Design for compare slot of same category
     enchanted = False
@@ -26,6 +27,7 @@ class Slot:
 
         if self.category in ["sword", "axes", "pickaxe"]:
             self.fullStack = 1
+
     def SetCategory(self):
         self.category = name  # TODO
         for x in (

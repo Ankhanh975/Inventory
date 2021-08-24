@@ -18,7 +18,7 @@
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": False
           },
           {"name": "diamond",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+               "fullStack": 64, "category": "None", "rank": 2, "supposePos": [0, 0], "throwAble": True
           },
           {"name": "diamond_axe",
                "fullStack":  1, "category": "Axes", "rank": 1, "supposePos": "None", "throwAble": False
@@ -30,7 +30,7 @@
                "fullStack":  1, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
           },
           {"name": "emerald",
-               "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
+               "fullStack": 64, "category": "None", "rank": 3, "supposePos": [0, 0], "throwAble": True
           },
           {"name": "ender_pearl",
                "fullStack": 64, "category": "None", "rank": 1, "supposePos": [0, 0], "throwAble": True
