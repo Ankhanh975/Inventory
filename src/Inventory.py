@@ -13,8 +13,6 @@ allItem = ['apple_golden', 'arrow', 'bow_standby', 'bucket_water',
            'stone_pickaxe', 'stone_sword', 'wood_sword', "wood_axe", "wood_pickaxe",
            "red_wool", "blue_wool", "green_wool", "yellow_wool", "shears"]
 
-
-
 class Inventory:
     Combine = Combine
     Swap = Swap

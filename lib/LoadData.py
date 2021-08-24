@@ -39,5 +39,6 @@ def lower_dict(data):
 
 
 if __name__ == '__main__':
-    data = LoadYaml()
-    lower_dict(data)
+    data = LoadYaml("C:/Users/Dell/Desktop/C++/Inventory/data.yaml")["data"]
+    x = data["data"]
+    print(x, x[0], x[1])

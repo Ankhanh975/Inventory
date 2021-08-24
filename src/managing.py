@@ -90,9 +90,18 @@ ___________
 
     return Table+"\n"
 
-def ToEnderChest(self, x, y):
+def ToEnderChest(self, x: int, y: int):
     pass
 
 def Buy(self, item):
     # Trade the item with NPC
     pass
+
+def ToEnderChestAll(self, mode= ["in", "out"][0], seclect=["resource", "throwAble"][0]): 
+    if mode == "in":
+        pass
+    if seclect == "resource":
+        pass
+    for x in range(3):
+        for y in range(9):
+            pass
