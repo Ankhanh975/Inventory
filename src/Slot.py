@@ -1,31 +1,28 @@
 import functools
+from lib import LoadData
+
+
+ItemData = LoadData.LoadData()["item"]
 @functools.total_ordering
 class Slot:
-    sword = ["wood_sword", "stone_sword", "iron_sword", "diamond_sword"]
-    axes = ["wood_axe", "iron_axe", "diamond_axe", "gold_axe"]
-    pickaxe = ["wood_pickaxe", "iron_pickaxe", "gold_pickaxe", "diamond_pickaxe"]
-    block = ["red_wool", "blue_wool", "green_wool", "yellow_wool"]
-    resource = ["iron_ingot", "gold_ingot", "diamond", "emerald"]
-    possion = ["Speed", "Jump", "Invisible"]
-    tools = ["shears"]
-    tools += sword + axes + pickaxe 
-
     rank = 1 # Design for compare slot of same category
     enchanted = False
     fullStack = 64
 
-    def __init__(self, name: str = "Air", number: int = 1, enchanted: bool = False):
-        self.name = name
-        self.number = number
+    def __init__(self, name: str = "air", number: int = 1, enchanted: bool = False):
+        x=ItemData[name]
+        self.__dict__.update(x)
         
-        # self.id = int(0)  # Remove id system since Minecraft 1.10.2(?)
-        self.enchanted = enchanted
-        self.SetRank()
-        self.SetCategory()
+        # self.name = name
+        # self.number = number
+        
+        # # self.id = int(0)  # Remove id system since Minecraft 1.10.2(?)
+        # self.enchanted = enchanted
+        # self.SetRank()
+        # self.SetCategory()
 
-
-        if self.category in ["sword", "axes", "pickaxe"]:
-            self.fullStack = 1
+        # if self.category in ["sword", "axes", "pickaxe"]:
+        #     self.fullStack = 1
 
 
     
@@ -43,6 +40,15 @@ class Slot:
     def __eq__(self, other):
         return True
         
+    
+    # sword = ["wood_sword", "stone_sword", "iron_sword", "diamond_sword"]
+    # axes = ["wood_axe", "iron_axe", "diamond_axe", "gold_axe"]
+    # pickaxe = ["wood_pickaxe", "iron_pickaxe", "gold_pickaxe", "diamond_pickaxe"]
+    # block = ["red_wool", "blue_wool", "green_wool", "yellow_wool"]
+    # resource = ["iron_ingot", "gold_ingot", "diamond", "emerald"]
+    # possion = ["Speed", "Jump", "Invisible"]
+    # tools = ["shears"]
+    # tools += sword + axes + pickaxe 
 # def SetCategory(self):
 #     self.category = name  # TODO
 #     for x in (

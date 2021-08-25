@@ -1,10 +1,10 @@
-import getShape
-from Slot import Slot
+from src import getShape
+from src.Slot import Slot
 import win32api
 import win32con
-from managing import Swap, Combine, __str__, __repr__
+from src.managing import Swap, Combine, __str__, __repr__
 import lib.resource
-import AI
+from src import AI
 allItem = ['apple_golden', 'arrow', 'bow_standby', 'bucket_water',
            'compass', 'diamond', 'diamond_axe', 'diamond_pickaxe',
            'diamond_sword', 'emerald', 'ender_pearl', 'fireball',

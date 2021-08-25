@@ -3,6 +3,7 @@ import traceback
 import sys
 import json
 
+
 def LoadYaml(filename):
     stream = open(filename, 'r')
     try:
@@ -21,6 +22,7 @@ def LoadYaml(filename):
 def JsonToTxt(data):
     return json.dumps(data, indent=4, sort_keys=True)
 
+
 def lower_dict(data):
     # Lower all string in tag name for easier use
     if isinstance(data, dict):
@@ -37,8 +39,15 @@ def lower_dict(data):
         for item in data:
             lower_dict(item)
 
+def PrettyPrint(data, indent=4, sort_keys=True):
+    print(json.dumps(data, indent=indent, sort_keys=sort_keys))
 
 if __name__ == '__main__':
-    data = LoadYaml("C:/Users/Dell/Desktop/C++/Inventory/data.yaml")["data"]
-    x = data["data"]
-    print(x, x[0], x[1])
+    pass
+
+
+def LoadData():
+    data = LoadYaml("data.yaml")
+    data = data["data"]
+    lower_dict(data)
+    return data
