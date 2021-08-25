@@ -1,6 +1,6 @@
 # "supposePos" tell where item to go, highest rank will be there, lower rank will be in 2nd slot (if have]
 # "supposePos": "Condition" mean will be determined later in code
-# TODO: supposePos
+# Rank: Design for compare slot of same category
 ---
 data: {
      "item": {
@@ -102,7 +102,7 @@ data: {
                "name": "ender_pearl", "fullStack": 64, "category": "None", "rank": 4, "supposePos": [[0, 6]], "throwAble": True, "prize": "4 emerald", "ConditionToBuy": []
           },
           "fireball": {
-               "name": "fireball", "fullStack": 64, "category": "None", "rank": 1, "supposePos": [[0, 4]], "throwAble": True, "prize": "40 iron", "ConditionToBuy": []
+               "name": "fireball", "fullStack": 64, "category": "None", "rank": 1, "supposePos": "Condition", "throwAble": True, "prize": "40 iron", "ConditionToBuy": []
           },
           "egg": {
                "name": "egg", "fullStack": 16, "category": "None", "rank": 3, "supposePos": "None", "throwAble": True, "prize": "1 emerald", "ConditionToBuy": []

@@ -25,6 +25,8 @@ if __name__ == '__main__':
     print("From main", Slot.Slot.__dict__)
     print("From main", x)
     print("From main", x.__dict__)
+    print(x.name)
+    print(x.Try())
 # if __name__ == '__main__':
 #     inputMap=[[0, 0, 0, 0, 0, 0, 0, 0, 0], 
 #             [0, 0, 0, 0, 0, 0, 0, 0, 0], 
